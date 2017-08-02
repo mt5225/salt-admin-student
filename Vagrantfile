@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :saltmaster do |saltmaster_config|
     # --- Use the Virtualbox GUI ---
     saltmaster_config.vm.provider "virtualbox" do |vb|
-       vb.gui = true
+       vb.gui = false 
        vb.name = "salt_admin_saltmaster"
        vb.memory = 1024
     end
@@ -41,7 +41,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :cweb do |cweb_config|
     # --- Use the Virtualbox GUI ---
     cweb_config.vm.provider "virtualbox" do |vb|
-       vb.gui = true
+       vb.gui = false 
        vb.name = "salt_admin_cweb"
        vb.memory = 512 
     end
@@ -67,7 +67,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :redis do |redis_config|
     # --- Use the Virtualbox GUI ---
     redis_config.vm.provider "virtualbox" do |vb|
-       vb.gui = true
+       vb.gui = false 
        vb.name = "salt_admin_redis"
        vb.memory = 512 
     end
@@ -93,7 +93,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :uarchive do |uarchive_config|
     # --- Use the Virtualbox GUI ---
     uarchive_config.vm.provider "virtualbox" do |vb|
-       vb.gui = true
+       vb.gui = false 
        vb.name = "salt_admin_uarchive"
        vb.memory = 512
     end
@@ -116,7 +116,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :sdev do |sdev_config|
     # --- Use the Virtualbox GUI ---
     sdev_config.vm.provider "virtualbox" do |vb|
-       vb.gui = true
+       vb.gui = false 
        vb.name = "salt_admin_sdev"
        vb.memory = 512
     end
