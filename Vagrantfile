@@ -132,5 +132,51 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
     # Install Salt with custom bootstrap
     sdev_config.vm.provision :shell, inline: '/vagrant/provision/saltify.sh minion'
+  end 
+  #  ------------------------------
+  #  --- Ubuntu (uarchive) host ---
+  #  ------------------------------
+  config.vm.define :st2 do |st2_config|
+    # --- Use the Virtualbox GUI ---
+    st2_config.vm.provider "virtualbox" do |vb|
+       vb.gui = false 
+       vb.name = "st2"
+       vb.memory = 4096 
+    end
+    # --- Define virtual machine ---
+    st2_config.vm.box = "box-cutter/ubuntu1404"
+    st2_config.vm.box_check_update = false
+    st2_config.vm.host_name = "st2"
+
+    # Network settings
+    st2_config.vm.network "private_network", ip: "192.168.50.105"
+    st2_config.vm.network "public_network", :bridge => 'en0: Wi-Fi (AirPort)'
+    
+    # Install Salt with custom bootstrap
+    st2_config.vm.provision :shell, inline: 'sudo /vagrant/provision/saltify.sh minion'
   end
-end
+
+end  
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+     
+     
+     
+     
+     
+     
