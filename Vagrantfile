@@ -153,7 +153,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     st2_config.vm.network "public_network", :bridge => 'en0: Wi-Fi (AirPort)'
     
     # Install Salt with custom bootstrap
-    st2_config.vm.provision :shell, inline: 'sudo /vagrant/provision/saltify.sh minion'
+    st2_config.vm.provision :shell, inline: 'sudo /vagrant/provision/st2.sh'
   end
 
 end  
